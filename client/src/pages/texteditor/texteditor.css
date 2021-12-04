@@ -1,0 +1,17 @@
+.wrap-editor {
+  display: flex;
+  flex-direction: column;
+}
+
+.editor {
+  width: 800px;
+  border: 1px solid #e1e1e1;
+}
+
+.preview {
+  color: #333;
+  width: 800px;
+  background-color: #fafafa;
+  border: 1px solid #aaa;
+  word-wrap: break-word;
+}

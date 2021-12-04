@@ -1,0 +1,42 @@
+.preview-html {
+  display: block;
+  border: 1px solid #a1a1a1;
+}
+.preview-code-html {
+  display: block;
+  word-wrap: break-word;
+  padding: 1rem;
+  border: 1px solid #e1e1e1;
+}
+
+.content-html {
+  display: block;
+  word-wrap: break-word;
+  padding: 1rem;
+  border: 1px solid #e1e1e1;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.Modal {
+  margin: auto;
+  position: absolute;
+  width: 900px;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}

@@ -1,0 +1,27 @@
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  width: 800px;
+  background-color: #d1d1d1;
+  border: 1px solid #d1d1d1;
+}
+
+.toolbar-inline-top {
+  display: flex;
+  padding: 7px 0px 0px 7px;
+}
+
+.toolbar-inline-center {
+  display: flex;
+  padding: 7px 0px 7px 7px;
+}
+
+.toolbar-inline-bottom {
+  display: flex;
+  padding: 0px 0px 7px 7px;
+}
+
+.toolbar button {
+  margin: 0px 3px 0 3px;
+}

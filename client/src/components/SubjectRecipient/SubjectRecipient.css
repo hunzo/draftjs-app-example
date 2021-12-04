@@ -1,0 +1,18 @@
+.subject-container {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin-top: 1rem;
+  border: 1px solid #d1d1d1;
+}
+
+.subject-box {
+  padding: 10px;
+}
+
+.subject-box input {
+  margin: 3px 4px 3px 0;
+}
+.subject-box button {
+  margin: 3px 0 3px 0;
+}
