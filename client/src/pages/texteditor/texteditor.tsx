@@ -7,8 +7,10 @@ import {
   Modifier,
   RichUtils,
 } from 'draft-js'
+import { useState } from 'react'
 import SubjectRecipient from '../../components/SubjectRecipient/SubjectRecipient'
 import { myBlockRenderer } from '../../components/texteditor/BlockRenderor/BlockRenderor'
+import { myBlockStyle } from '../../components/texteditor/BlockStyle/BlockStyle'
 import ToolBar from '../../components/toolbar/toolbar'
 import { useEditor } from '../../context/editorProvider'
 
@@ -16,6 +18,7 @@ import './texteditor.css'
 
 const TextEdtor: React.FC = () => {
   const { editorState, setEditorState } = useEditor()
+  const [focus, setFocus] = useState(false)
 
   const _handleKeyCommand = (command: DraftEditorCommand) => {
     const newState = RichUtils.handleKeyCommand(editorState, command)
@@ -60,10 +63,14 @@ const TextEdtor: React.FC = () => {
 
   return (
     <div className="wrap-editor">
+      <p>focus: {JSON.stringify(focus)}</p>
       <SubjectRecipient />
       <ToolBar />
-      <div className="editor">
+      <div className={focus ? 'editor-focus' : 'editor'}>
         <Editor
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
+          // blockStyleFn={myBlockStyle}
           editorState={editorState}
           onChange={setEditorState}
           handleKeyCommand={_handleKeyCommand}

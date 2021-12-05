@@ -77,50 +77,48 @@ const ToolBar: React.FC = () => {
       })
   }
 
+  const BLOCK_BUTTON = [
+    { style: 'header-one', name: 'H1' },
+    { style: 'header-two', name: 'H2' },
+    { style: 'header-three', name: 'H3' },
+    { style: 'header-four', name: 'H4' },
+    { style: 'header-five', name: 'H5' },
+    { style: 'header-six', name: 'H6' },
+    { style: 'ordered-list-item', name: 'Ordered List' },
+    { style: 'unordered-list-item', name: 'Unordered List' },
+    // { style: 'code-block', name: 'Code Block' },
+    // { style: 'blockquote', name: 'Blockquote' },
+  ]
+  const INLINE_BUTTON = [
+    { style: 'unstyled', name: 'normal' },
+    { style: 'BOLD', name: 'B' },
+    { style: 'ITALIC', name: 'I' },
+    { style: 'UNDERLINE', name: 'U' },
+    { style: 'STRIKETHROUGH', name: 'Strike-throught' },
+    { style: 'CODE', name: 'Mono space' },
+  ]
+
   return (
     <div className="toolbar">
       <div className="toolbar-inline-top">
-        <button onMouseDown={(e) => handleBlockClick(e, 'header-one')}>
-          H1
-        </button>
-        <button onMouseDown={(e) => handleBlockClick(e, 'header-two')}>
-          H2
-        </button>
-        <button onMouseDown={(e) => handleBlockClick(e, 'header-three')}>
-          H3
-        </button>
-        <button onMouseDown={(e) => handleBlockClick(e, 'header-four')}>
-          H4
-        </button>
-        <button onMouseDown={(e) => handleBlockClick(e, 'header-five')}>
-          H5
-        </button>
-        <button onMouseDown={(e) => handleBlockClick(e, 'header-six')}>
-          H6
-        </button>
-        <button onMouseDown={(e) => handleBlockClick(e, 'ordered-list-item')}>
-          ordered list
-        </button>
-        <button onMouseDown={(e) => handleBlockClick(e, 'unordered-list-item')}>
-          unordered list
-        </button>
+        {BLOCK_BUTTON.map((i) => (
+          <button
+            key={i.style}
+            onMouseDown={(e) => handleBlockClick(e, i.style)}
+          >
+            {i.name}
+          </button>
+        ))}
       </div>
       <div className="toolbar-inline-center">
-        <button onMouseDown={(e) => handleToggleClick(e, 'unstyled')}>
-          Normal
-        </button>
-        <button onMouseDown={(e) => handleToggleClick(e, 'BOLD')}>
-          <b>B</b>
-        </button>
-        <button onMouseDown={(e) => handleToggleClick(e, 'UNDERLINE')}>
-          <u>U</u>
-        </button>
-        <button onMouseDown={(e) => handleToggleClick(e, 'ITALIC')}>
-          <i>I</i>
-        </button>
-        <button onMouseDown={(e) => handleToggleClick(e, 'STRIKETHROUGH')}>
-          strikethrough
-        </button>
+        {INLINE_BUTTON.map((i) => (
+          <button
+            key={i.style}
+            onMouseDown={(e) => handleToggleClick(e, i.style)}
+          >
+            {i.name}
+          </button>
+        ))}
         <button
           disabled={editorState.getSelection().isCollapsed()}
           onMouseDown={(e) => {
