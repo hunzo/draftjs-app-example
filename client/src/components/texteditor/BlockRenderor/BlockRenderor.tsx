@@ -10,7 +10,6 @@ interface BlockComponentProps {
 
 export const myBlockRenderer = (contentBlock: ContentBlock) => {
   const type = contentBlock.getType()
-  console.log('check type: ', type)
   if (type === 'atomic') {
     return {
       component: MediaComponent,

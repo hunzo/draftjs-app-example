@@ -1,0 +1,13 @@
+version: '3'
+services:
+  api:
+    build: ./server
+    ports:
+      - 8080:8080
+
+  app:
+    build: ./client
+    ports:
+      - 80:80
+    depends_on:
+      - api

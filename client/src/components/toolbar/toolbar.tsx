@@ -87,7 +87,10 @@ const ToolBar: React.FC = () => {
     { style: 'ordered-list-item', name: 'Ordered List' },
     { style: 'unordered-list-item', name: 'Unordered List' },
     // { style: 'code-block', name: 'Code Block' },
-    // { style: 'blockquote', name: 'Blockquote' },
+    { style: 'blockquote', name: 'Blockquote' },
+    { style: 'text-align-left', name: 'AL' },
+    { style: 'text-align-center', name: 'AC' },
+    { style: 'text-align-right', name: 'AR' },
   ]
   const INLINE_BUTTON = [
     { style: 'unstyled', name: 'normal' },

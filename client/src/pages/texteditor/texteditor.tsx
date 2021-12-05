@@ -70,13 +70,12 @@ const TextEdtor: React.FC = () => {
         <Editor
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
-          // blockStyleFn={myBlockStyle}
+          blockStyleFn={myBlockStyle}
           editorState={editorState}
           onChange={setEditorState}
           handleKeyCommand={_handleKeyCommand}
           blockRendererFn={myBlockRenderer}
           keyBindingFn={_handleKeyBindingFn}
-          placeholder="Start here . . ."
         />
       </div>
       <DebugPreview />

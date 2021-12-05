@@ -49,6 +49,48 @@ const SendMail: React.FC = () => {
           />
         )
       }
+      if (block.type === 'blockquote') {
+        return (
+          <div
+            style={{
+              borderLeft: '5px solid #eee',
+              color: '#666',
+              fontFamily: 'Hoefler Text, Georgia, serif',
+              fontStyle: 'italic',
+              margin: '16px 0',
+              padding: '10px 20px',
+            }}
+          />
+        )
+      }
+
+      if (block.type === 'text-align-center') {
+        return (
+          <div
+            style={{
+              textAlign: 'center',
+            }}
+          />
+        )
+      }
+      if (block.type === 'text-align-left') {
+        return (
+          <div
+            style={{
+              textAlign: 'left',
+            }}
+          />
+        )
+      }
+      if (block.type === 'text-align-right') {
+        return (
+          <div
+            style={{
+              textAlign: 'right',
+            }}
+          />
+        )
+      }
     },
   })(editorState.getCurrentContent())
 
